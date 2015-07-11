@@ -53,4 +53,15 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('LoginCtrl', function ($scope, $stateParams ) {
+  $scope.LogIn = function  (user) {
+     console.log(user);
+     $scope.userNameErr = $scope.userPassErr = $scope.authErr = false;
+     if (user & user ==='undefined') {
+        if (!user.username || user.username !== null || user.username === 'undefined') {$scope.userNameErr = true};
+        if (!user.password || user.password !== null || user.password === 'undefined') {$scope.userNameErr = true};
+      }
+  };
 });
